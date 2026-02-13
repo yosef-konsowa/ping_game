@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  python_app:
+    build: .
+    container_name: python_ping_game
+    expose:
+      - "7000"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+     - "7000:80"
+    depends_on:
+      - python_app
