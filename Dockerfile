@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 7000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:7000" "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:7000", "app:app"]
